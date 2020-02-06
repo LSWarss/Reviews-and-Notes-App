@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>Film details</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2>Show Product</h2>
+    </div>
+
+    <div>
+        <form class="form-horizontal">
+            <div>
+                <label>Film id:</label>
+                <p th:text="${film.id}"> Film Id</p>
+            </div>
+            <div>
+                <label>Title: </label>
+                <p th:text="${film.title}">Film title</p>
+            </div>
+            <div>
+                <label>Director: </label>
+                <p th:text="${film.director}">Film director</p>
+            </div>
+            <div>
+                <label>Watch date: </label>
+                <p th:text="${film.watchDate}">Film watch date</p>
+            </div>
+            <div>
+                <label>Review: </label>
+                <p th:text="${film.review}">Film review</p>
+            </div>
+            <div>
+                <label>Notes: </label>
+                <p th:text="${film.notes}">Film notes</p>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+</html>

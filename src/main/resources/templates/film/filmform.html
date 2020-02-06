@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>Film form</title>
+</head>
+<body>
+<div class="container">
+    <h2>Film details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${filmForm}" th:action="@{/film}" method="post">
+
+            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                <p th:text="#{form.hasError}">Error Message</p>
+            </div>
+
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group" th:class="${#fields.hasErrors('title')} ? 'form-group has-error' : 'form-group'">
+                <label>Title: </label>
+                <div>
+                    <input type="text" class="form-control" th:field="*{title}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('title')}" th:text="${err}"/>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" th:class="${#fields.hasErrors('director')} ? 'form-group has-error' : 'form-group'">
+                <label>Director: </label>
+                <div>
+                    <input type="text" class="form-control" th:field="*{director}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('director')}" th:text="${err}"/>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" th:class="${#fields.hasErrors('watchDate')} ? 'form-group has-error' : 'form-group'">
+                <label>Watch date: </label>
+                <div>
+                    <input type="date" class="form-control" th:field="*{watchDate}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('watchDate')}" th:text="${err}"/>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" th:class="${#fields.hasErrors('review')} ? 'form-group has-error' : 'form-group'">
+                <label>Review: </label>
+                <div>
+                    <input type="text" class="form-control" th:field="*{review}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('review')}" th:text="${err}"/>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" th:class="${#fields.hasErrors('notes')} ? 'form-group has-error' : 'form-group'">
+                <label>Notes: </label>
+                <div>
+                    <input type="text" class="form-control" th:field="*{notes}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('notes')}" th:text="${err}"/>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-default">Save</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
