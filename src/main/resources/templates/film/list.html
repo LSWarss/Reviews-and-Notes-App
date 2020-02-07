@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <title>Simple film review and notes adding app</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <div class="container">
     <div th:if="${not #lists.isEmpty(films)}">
-        <h2>Watched film list: </h2>
+        <h2 class = "mainHeader">Watched film list: </h2>
         <table>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
                 <th>Director</th>
-                <th>WatchDate</th>
+                <th>Watch Date</th>
                 <th>Review</th>
                 <th>Notes</th>
             </tr>
@@ -25,15 +27,17 @@
                 <td th:text="${film.watchDate}"></td>
                 <td th:text="${film.review}"></td>
                 <td th:text="${film.notes}"></td>
-                <td><a th:href="${'/film/show/' + film.id}">View</a></td>
-                <td><a th:href="${'/film/edit/' + film.id}">Edit</a></td>
-                <td><a th:href="${'/film/delete/' + film.id}">Delete</a></td>
+                <td><a class="link" th:href="${'/film/show/' + film.id}">View</a></td>
+                <td><a class="link" th:href="${'/film/edit/' + film.id}">Edit</a></td>
+                <td><a class="link" th:href="${'/film/delete/' + film.id}">Delete</a></td>
             </tr>
         </table>
+
     </div>
-    <div>
-        <a href="/film/new">Add Film</a>
+    <div class="addButton">
+        <p><a href="/film/new">Add Film</a></p>
     </div>
+
 </div>
 </body>
 </html>
