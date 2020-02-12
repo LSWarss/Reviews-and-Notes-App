@@ -2,12 +2,11 @@ package dev.lswarss.ReviewsandNotesApp.services;
 
 import dev.lswarss.ReviewsandNotesApp.commands.FilmForm;
 import dev.lswarss.ReviewsandNotesApp.converters.FilmFormToFilm;
-import dev.lswarss.ReviewsandNotesApp.domain.Film;
+import dev.lswarss.ReviewsandNotesApp.DTO.Film;
 import dev.lswarss.ReviewsandNotesApp.repositories.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

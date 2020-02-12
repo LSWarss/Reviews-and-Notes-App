@@ -1,7 +1,7 @@
 package dev.lswarss.ReviewsandNotesApp.converters;
 
 import dev.lswarss.ReviewsandNotesApp.commands.FilmForm;
-import dev.lswarss.ReviewsandNotesApp.domain.Film;
+import dev.lswarss.ReviewsandNotesApp.DTO.Film;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package dev.lswarss.ReviewsandNotesApp.domain;
+package dev.lswarss.ReviewsandNotesApp.DTO;
 
 import lombok.Getter;
 import lombok.Setter;

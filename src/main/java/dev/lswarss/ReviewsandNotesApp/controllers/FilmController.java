@@ -2,7 +2,7 @@ package dev.lswarss.ReviewsandNotesApp.controllers;
 
 import dev.lswarss.ReviewsandNotesApp.commands.FilmForm;
 import dev.lswarss.ReviewsandNotesApp.converters.FilmToFilmForm;
-import dev.lswarss.ReviewsandNotesApp.domain.Film;
+import dev.lswarss.ReviewsandNotesApp.DTO.Film;
 import dev.lswarss.ReviewsandNotesApp.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

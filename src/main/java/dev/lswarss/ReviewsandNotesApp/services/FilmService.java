@@ -1,7 +1,7 @@
 package dev.lswarss.ReviewsandNotesApp.services;
 
 import dev.lswarss.ReviewsandNotesApp.commands.FilmForm;
-import dev.lswarss.ReviewsandNotesApp.domain.Film;
+import dev.lswarss.ReviewsandNotesApp.DTO.Film;
 
 import java.util.List;
 
