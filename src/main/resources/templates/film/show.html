@@ -36,6 +36,11 @@
                 <label>Notes: </label>
                 <p th:text="${film.notes}">Film notes</p>
             </div>
+            <div>
+                <label>Poster: </label>
+                <img th:src="${film.getPoster()}">
+            </div>
+
         </form>
     </div>
 
