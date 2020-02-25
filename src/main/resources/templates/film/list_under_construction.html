@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>Simple film review and notes adding app</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style_list.css}" href="/src/main/resources/static/css/style_list.css"/>
+</head>
+<body>
+    <h2 class ="mainHeader">Watched films: </h2>
+<div id="mainList">
+    <div th:if="${not #lists.isEmpty(films)}">
+        <div th:each="film: ${films}">
+            <label>ID: </label>
+            <p th:text="${film.id}"></p>
+            <label>Title: </label>
+            <p th:text="${film.title}"></p>
+            <label>Director: </label>
+            <p th:text="${film.director}"></p>
+            <label>Watch Date: </label>
+            <p th:text="${film.watchDate}"></p>
+            <label>Review: </label>
+            <p th:text="${film.review}"></p>
+            <label>Notes: </label>
+            <p th:text="${film.notes}"></p>
+            <label><a class="link" th:href="${'/film/show/' + film.id}">View</a></label>
+            <label><a class="link" th:href="${'/film/edit/' + film.id}">Edit</a></label>
+            <label><a class="link" th:href="${'/film/delete/' + film.id}">Delete</a></label>
+        </div>
+    </div>
+</div>
+<div class="addButton">
+    <p><a href="/film/new">Add Film</a></p>
+</div>
+</body>
+</html>
