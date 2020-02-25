@@ -2,9 +2,11 @@ package dev.lswarss.ReviewsandNotesApp.DTO;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.Logger;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +18,7 @@ import java.net.URLConnection;
 import java.sql.Date;
 
 import static dev.lswarss.ReviewsandNotesApp.helpClasses.JsonReader.readJsonFromUrl;
+
 
 @Entity
 public class Film {
@@ -46,17 +49,17 @@ public class Film {
 
     private String poster;
 
-    public String getPoster() {
+    public String getPoster() throws IOException, JSONException {
+        setPoster();
         return poster;
     }
 
-    public void setPoster(String poster) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("http://www.omdbapi.com/?apikey=bb798bb3&s=pulp_fiction");
+    public void setPoster() throws IOException, JSONException {
+        JSONObject json = readJsonFromUrl("http://www.omdbapi.com/?apikey=bb798bb3&s="+getTitle());
         System.out.println(json.toString());
         JSONArray json1 = json.getJSONArray("Search");
         JSONObject json_poster = json1.getJSONObject(0);
-        poster = json_poster.get("Poster").toString();
-        System.out.println(poster.toString());
+        String poster = json_poster.get("Poster").toString();
         this.poster = poster;
     }
 }
